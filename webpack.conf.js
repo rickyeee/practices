@@ -60,6 +60,7 @@ module.exports = {
     ]
 	},
 	plugins: [
+		// 测试ejs公共模块
 		new htmlWebpackPlugin({
 			filename: 'index.html',
 			template: 'index.html',

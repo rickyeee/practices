@@ -2,10 +2,14 @@
 	"name": "demo-webpack",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"test": "npm test",
-		"build": "webpack --config ./webpack.conf.js --color"
+		"build": "webpack --config ./webpack.conf.js --color",
+		"eslint": "eslint ./",
+		"npm_lifecycle_event": "node ./src/npm_lifecycle_event.js"
+	},
+	"bin": {
+		"my-cli": "./src/cli/index.js"
 	},
 	"husky": {
 		"hooks": {
@@ -14,13 +18,13 @@
 	},
 	"lint-staged": {
 		"linters": {
-      "*.{js,jsx,ts}": [
-        "eslint"
-      ]
-    },
-    "globOptions": {
-      "matchBase": false
-    }
+			"*.js": [
+				"eslint"
+			]
+		},
+		"globOptions": {
+			"matchBase": false
+		}
 	},
 	"author": "ricky",
 	"license": "MIT",
@@ -31,6 +35,9 @@
 		"@babel/preset-env": "^7.1.0",
 		"babel-loader": "^8.0.4",
 		"ejs": "^2.6.1",
+		"eslint": "^5.9.0",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-plugin-import": "^2.14.0",
 		"html-webpack-plugin": "^3.2.0",
 		"husky": "^1.2.0",
 		"lint-staged": "^8.1.0",
@@ -41,6 +48,6 @@
 	"dependencies": {
 		"@types/node": "^10.12.0",
 		"ts-loader": "^5.2.2",
-		"zvsdk": "githttps://git.ms.netease.com/ziwei/ZVSDK-js.git"
+		"zvsdk": "git+https://git.ms.netease.com/ziwei/ZVSDK-js.git"
 	}
 }

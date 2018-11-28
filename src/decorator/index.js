@@ -9,6 +9,7 @@ class A {
 	}
 }
 
+
 function mixin(...source) {
 	console.log(...source)
 	return function(target) {

@@ -4,8 +4,7 @@
 	"description": "",
 	"scripts": {
 		"build": "webpack --config ./webpack.conf.js --color",
-		"npm_lifecycle_event": "node ./src/npm_lifecycle_event.js",
-		"precommit": "lint-staged"
+		"npm_lifecycle_event": "node ./src/npm_lifecycle_event.js"
 	},
 	"bin": {
 		"my-cli": "./src/cli/index.js"

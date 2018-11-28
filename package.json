@@ -3,9 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"test": "npm test",
 		"build": "webpack --config ./webpack.conf.js --color",
-		"eslint": "eslint ./",
 		"npm_lifecycle_event": "node ./src/npm_lifecycle_event.js"
 	},
 	"bin": {

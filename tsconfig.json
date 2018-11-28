@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+			"outDir": "./tsDist",
+			"allowJs": true,
+			"target": "es5",
+			"watch": true,
+			"lib": ["es2015.promise", "es5"]
+	},
+	"sourceMap": true,
+	"include": [
+			"./src/"
+	]
+}

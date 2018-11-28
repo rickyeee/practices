@@ -1,0 +1,46 @@
+{
+	"name": "demo-webpack",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "npm test",
+		"build": "webpack --config ./webpack.conf.js --color"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"linters": {
+      "*.{js,jsx,ts}": [
+        "eslint"
+      ]
+    },
+    "globOptions": {
+      "matchBase": false
+    }
+	},
+	"author": "ricky",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.1.2",
+		"@babel/core": "^7.1.2",
+		"@babel/plugin-proposal-decorators": "^7.1.6",
+		"@babel/preset-env": "^7.1.0",
+		"babel-loader": "^8.0.4",
+		"ejs": "^2.6.1",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^1.2.0",
+		"lint-staged": "^8.1.0",
+		"typescript": "^3.1.6",
+		"webpack": "^4.25.1",
+		"webpack-cli": "^3.1.2"
+	},
+	"dependencies": {
+		"@types/node": "^10.12.0",
+		"ts-loader": "^5.2.2",
+		"zvsdk": "githttps://git.ms.netease.com/ziwei/ZVSDK-js.git"
+	}
+}

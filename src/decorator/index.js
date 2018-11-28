@@ -8,7 +8,6 @@ class A {
 		this.a = 1;
 	}
 }
-
 function mixin(...source) {
 	console.log(...source)
 	return function(target) {

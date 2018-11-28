@@ -15,6 +15,6 @@ function mixin(...source) {
 	return function(target) {
 		Object.assign(target.prototype, ...source);
 	}
-}
+} 
 console.log(new A().b);
 export default res;

@@ -16,7 +16,7 @@
 	},
 	"lint-staged": {
 		"linters": {
-			"**/*.js": [
+			"**/*.{js}": [
 				"eslint"
 			]
 		}

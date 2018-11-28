@@ -5,6 +5,7 @@ function testType(info) {
     console.log(info.name);
 }
 
+
 var server = http.createServer(function (req, res) {
 		res.send('proxy success')
     // console.log(typeof req.body);

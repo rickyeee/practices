@@ -3,7 +3,7 @@ var url = require('url');
 var _toString = Object.prototype.toString;
 function testType(info) {
     console.log(info.name);
-}
+} 
 
 
 var server = http.createServer(function (req, res) {

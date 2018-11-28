@@ -21,9 +21,6 @@
 			"*.js": [
 				"eslint"
 			]
-		},
-		"globOptions": {
-			"matchBase": false
 		}
 	},
 	"author": "ricky",

@@ -10,4 +10,5 @@ process.exec('mv test-dir test-mv',function (error, stdout, stderr) {
 		console.log('exec error: ' + error);
 	}
 });
+
 console.log('hello cli');

@@ -25,7 +25,7 @@ var server = http.createServer(function (req, res) {
             alldata_1 += chunk;
             try {
                 testType(JSON.parse(alldata_1));
-            }
+            } 
             catch (e) {
                 console.log(e);
             }

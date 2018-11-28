@@ -14,7 +14,7 @@ var server = http.createServer(function (req, res) {
     if (req.url === '/get') {
         console.log(_toString.call(url.parse(req.url, true).query), 'get');
         console.log(url.parse(req.url, true).query);
-    }    
+    }     
     else {
         // post请求
         var alldata_1 = '';

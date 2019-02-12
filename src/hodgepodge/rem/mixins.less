@@ -1,0 +1,30 @@
+@import './variable.less';
+/* 设置容器拉伸的最小宽度 */
+.container-min-width() {
+	margin-right: auto;
+	margin-left: auto;
+	min-width: @min_device_width;
+
+	@media (-webkit-device-pixel-ratio: 2) {
+			min-width: @min_device_width * 2;
+	}
+
+	@media (-webkit-device-pixel-ratio: 3) {
+			min-width: @min_device_width * 3;
+	}
+}
+
+/* 设置容器拉伸的最大宽度 */
+.container-max-width() {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: @max_device_width;
+
+	@media (-webkit-device-pixel-ratio: 2) {
+			max-width: @max_device_width * 2;
+	}
+
+	@media (-webkit-device-pixel-ratio: 3) {
+			max-width: @max_device_width * 3;
+	}
+}

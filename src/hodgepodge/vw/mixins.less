@@ -1,0 +1,13 @@
+
+/* 设置字体大小，不使用vw单位， 根据dpr值分段调整 */
+.fontSize(@fontSize) {
+	font-size: @fontSize / @design-dpr;
+
+	[data-dpr="2"] & {
+			font-size: @fontSize / @design_dpr * 2;
+	}
+
+	[data-dpr="3"] & {
+			font-size: @fontSize / @design_dpr * 3;
+	}
+}

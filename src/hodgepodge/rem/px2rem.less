@@ -1,0 +1,28 @@
+
+@import "./variable.less";
+/*
+    rem与px对应关系，1rem代表在JS中设置的html font_size值（为一块的宽度），@rem即为@px对应占多少块
+
+        @px                     @rem
+    _____________    ===    ____________
+    @design_width              @blocks
+*/
+
+/* 单位px转化为rem */
+.px2rem(@property, @px) {
+	@{property}: (@px / @design_width * @blocks)rem;
+}
+
+/* 单位rem转化为px，可用于根据rem单位快速计算原px */
+.rem2px(@property, @rem) {
+	@{property}: (@rem / @blocks * @design_width)px;
+}
+
+
+/* usage */
+/*
+.a {
+	.px2rem(width, 20);
+	.px2rem(height, 20);
+}
+*/

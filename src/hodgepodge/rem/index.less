@@ -1,0 +1,21 @@
+
+@import './mixins.less';
+/* html根的宽度定义 */
+.root-width() {
+	body {
+			.container-min-width();
+
+			&[data-content-max] {
+					.container-max-width();
+			}
+	}
+
+	/* 某些机型虽然设备dpr大于1，但识别不了scale缩放，这里需要重新设置最小宽度防止出现横向滚动条 */
+	&[data-dpr="1"] body {
+			min-width: @min_device_width;
+	}
+}
+
+html {
+	.root-width();
+}

@@ -1,0 +1,17 @@
+@import './variable.less';
+
+/* 单位px转化为vw */
+.px2vw(@property, @px) {
+	@{property}: (@px / @design_width * 100)vw;
+}
+
+/* 单位vw转化为px，可用于根据vw单位快速计算原px */
+.vw2px(@property, @vw) {
+	@{property}: (@vw / 100 * @design_width)px;
+}
+
+/*
+	.usageOfPx2vw {
+		.px2vw(width, 20);
+	}
+*/

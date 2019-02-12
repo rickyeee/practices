@@ -1,0 +1,109 @@
+/**
+ * @direction 位置
+ * @direction border宽度
+ * @color 色值
+ * @position 元素定位方式，一般为relative即可
+ * 仅支持单边框和全边框
+ */
+
+.scale() {
+	@media only screen and (-webkit-device-pixel-ratio: 2) {
+		-webkit-transform: scaleY(.5);
+						transform: scaleY(.5);
+	}
+
+	@media only screen and (-webkit-device-pixel-ratio: 3) {
+			-webkit-transform: scaleY(.333333333333);
+							transform: scaleY(.333333333333);
+	}
+}
+// 单border
+.borderone(
+	@direction: top, @size: 1px, @position: relative, @color: #ddd
+) {
+	// 左右
+	.shape() when (@direction = left), (@direction = right) {
+		top: 0;
+		width: @size;
+		height: 100%;
+		.scale();
+	}
+	// 上下
+	.shape() when (@direction = top), (@direction = bottom) {
+		left: 0;
+		width: 100%;
+		height: @size;
+		.scale();
+	}
+	// 伪元素
+	.border-after() {
+		content: "";
+		position: absolute;
+		@{direction}: 0;
+
+		pointer-events: none;
+		background-color: @color;
+
+		@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+				-webkit-transform-origin: 0 0;
+								transform-origin: 0 0;
+		};
+		.shape();
+	}
+	/* 普通设备 */
+	@media not screen and (-webkit-min-device-pixel-ratio: 2) {
+		border-@{direction}: @size @style @color;
+	}
+
+	/* 高清设备 */
+	@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+		position: @position;
+		&:after {
+			.border-after();
+		}
+	}
+}
+// 全border
+.borderall (
+	@direction: top, @size: 1px, @position: relative, @color: #ddd, @style: border
+){
+	.border-after() {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		box-sizing: border-box;
+		-webkit-transform-origin: top left;
+		.scale();
+		border: @size @style @color;
+	}
+	/* 普通设备 */
+	@media not screen and (-webkit-min-device-pixel-ratio: 2) {
+		border: @size @style @color;
+	}
+
+	/* 高清设备 */
+	@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+		position: @position;
+		&:after {
+			.border-after();
+		}
+	}
+	
+}
+
+.border(
+	@direction: top, @size: 1px, @position: relative, @color: #ddd, @style: solid
+) when (@direction = all) {
+	.borderall();
+}
+
+.border(
+	@direction: top, @size: 1px, @position: relative, @color: #ddd, @style: solid
+) when not (@direction = all) {
+	.borderone();
+}
+// .a {
+// 	.borderall();
+// }

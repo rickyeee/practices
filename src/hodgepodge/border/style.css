@@ -1,0 +1,31 @@
+/**
+ * @direction 位置
+ * @direction border宽度
+ * @color 色值
+ * @position 元素定位方式，一般为relative即可
+ */
+.a {
+  position: relative;
+}
+.a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  border: 1px solid #ddd;
+}
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  .a:after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-device-pixel-ratio: 3) {
+  .a:after {
+    -webkit-transform: scaleY(0.33333333);
+    transform: scaleY(0.33333333);
+  }
+}

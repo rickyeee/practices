@@ -1,6 +1,20 @@
-process.send(process.pid);
-process.on('message', function (m) {
-    console.log('来自父进程的消息', m);
-    return;
+const EventEmitter = require('events');
+
+let emitter = new EventEmitter();
+
+emitter.on('myEvent', () => {
+	console.log('hi 1');
+// emitter.emit('myEvent');
+	
 });
-console.log(process.memoryUsage());
+
+emitter.on('myEvent', () => {
+  console.log('hi 2');
+}); 
+
+emitter.emit('myEvent');
+
+var a = false
+while(true) {
+	a = !a;
+}

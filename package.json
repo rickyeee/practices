@@ -1,9 +1,10 @@
 {
-	"name": "demo-webpack",
+	"name": "practice",
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
 		"build": "webpack --config ./webpack.conf.js --color",
+		"babel:test": "babel --plugins ./src/babel/plugin-import-demo ./src/babel/entry.js --out-dir babel/dist",
 		"npm_lifecycle_event": "node ./src/npm_lifecycle_event.js"
 	},
 	"bin": {
@@ -16,7 +17,10 @@
 	},
 	"lint-staged": {
 		"linters": {
-			"**/*.{js}": [
+			"**/*.{js, ts}": [
+				"eslint"
+			],
+			"*.{js, ts}": [
 				"eslint"
 			]
 		}
@@ -42,6 +46,7 @@
 	},
 	"dependencies": {
 		"@types/node": "^10.12.0",
+		"debug": "^4.1.0",
 		"ts-loader": "^5.2.2",
 		"zvsdk": "git+https://git.ms.netease.com/ziwei/ZVSDK-js.git"
 	}

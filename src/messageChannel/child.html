@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>child</title>
+</head>
+<body>
+	<b>this is child hhhhh!</b>
+	<input type="button" value="发送信息">	
+	<i id = "message"></i>
+	<script>
+		var eleBox = document.getElementById('message');
+		var channel = new MessageChannel();
+		window.addEventListener('DOMContentLoaded', function(e) {
+
+			//向父窗口发送消息，
+			top.postMessage('发送页加载完毕', '*',[channel.port2]);
+
+			channel.port1.onmessage=function(e){
+					var textnode=document.createTextNode('通道获取的消息为：'+e.data+'from port2');
+					eleBox.appendChild(textnode);
+			}
+			channel.port1.start();
+			
+	} ,false);
+	document.querySelector('[type="button"]').onclick=function() {
+		// console.log(window.__port.postMessage)
+		channel.port1.postMessage('from child 111111');
+	}
+	</script>
+</body>
+</html>

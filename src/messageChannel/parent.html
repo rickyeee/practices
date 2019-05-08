@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>parent</title>
+</head>
+<body>
+	<div>i am parent</div>
+	<p id = "message"></p>
+	<input type="button" value="发送信息">	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<iframe id="frame" src="./child.html" style="width: 800px; height: 580px;" frameborder="0"></iframe>
+	<script>
+		var eleBox = document.getElementById('message');
+		var frame = document.getElementById('frame');
+		var id = 0;
+		window.addEventListener("message", function(e){
+				eleBox.innerHTML = '接受到的信息是：' + e.data;
+				if(e.ports){
+					console.log(e.ports, 'port2');
+					window.__port=e.ports[0];
+					window.__port.onmessage=function(ev) {
+						console.log('接受到的信息是：' + ev.data, 'from port1')
+					}
+				}
+		}, false);
+		document.querySelector('[type="button"]').onclick=function() {
+			console.log(window.__port.postMessage)
+			window.__port.postMessage({a:1});
+		}
+	</script>
+</body>
+</html>

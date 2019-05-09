@@ -4,10 +4,12 @@
 			"allowJs": true,
 			"target": "es5",
 			"watch": true,
-			"lib": ["es2015.promise", "es5"]
+			"lib": ["es2015.promise", "dom", "es5"],
+			"experimentalDecorators": true,
+			"stripInternal": true
 	},
 	"sourceMap": true,
 	"include": [
-			"./src/"
+			"./src/*.ts"
 	]
 }

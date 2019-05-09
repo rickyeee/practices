@@ -32,6 +32,7 @@
 		"@babel/core": "^7.1.2",
 		"@babel/plugin-proposal-decorators": "^7.1.6",
 		"@babel/preset-env": "^7.1.0",
+		"@types/node": "^12.0.0",
 		"babel-loader": "^8.0.4",
 		"ejs": "^2.6.1",
 		"eslint": "^5.9.0",
@@ -40,14 +41,12 @@
 		"html-webpack-plugin": "^3.2.0",
 		"husky": "^1.2.0",
 		"lint-staged": "^8.1.0",
+		"ts-loader": "^5.2.2",
 		"typescript": "^3.1.6",
 		"webpack": "^4.25.1",
 		"webpack-cli": "^3.1.2"
 	},
 	"dependencies": {
-		"@types/node": "^10.12.0",
-		"debug": "^4.1.0",
-		"ts-loader": "^5.2.2",
-		"zvsdk": "git+https://git.ms.netease.com/ziwei/ZVSDK-js.git"
+		"debug": "^4.1.0"
 	}
 }
